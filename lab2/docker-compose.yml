@@ -1,0 +1,8 @@
+services:
+  app:
+    build:
+        context: .
+        dockerfile: Dockerfile
+    ports:
+        - "3220:8000"
+    command: sh -c "uvicorn webapp.main:init_app --host 0.0.0.0 --factory"
